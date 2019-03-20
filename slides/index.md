@@ -1,164 +1,265 @@
-- title : FsReveal
-- description : Introduction to FsReveal
-- author : Karlkim Suwanmongkol
-- theme : night
+- title : SAFE Stack - current state
+- description : SAFE Stack - current state
+- author : Tomasz Heimowski
+- theme : moon
 - transition : default
 
 ***
 
-### What is FsReveal?
-
-- Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)
-- Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing
-- Get it from [http://fsprojects.github.io/FsReveal/](http://fsprojects.github.io/FsReveal/)
-
-![FsReveal](images/logo.png)
-
-***
-
-### Reveal.js
-
-- A framework for easily creating beautiful presentations using HTML.
+# SAFE Stack
+## current state
 
 
-> **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
+<img src="images/safe.png" style="width:256px; background: transparent; border:none; box-shadow: none"  />
+
+Tomasz Heimowski 
+
+<img src="images/twitter.png" style="width:48px; background: transparent; border:none; box-shadow: none"  />
+<img src="images/github.png" style="width:48px; background: transparent; border: none; box-shadow: none"  />
+
+*@theimowski*
+
+https://theimowski.com
 
 ***
 
-### FSharp.Formatting
+# Plan
 
-- F# tools for generating documentation (Markdown processor and F# code formatter).
-- It parses markdown and F# script file and generates HTML or PDF.
-- Code syntax highlighting support.
-- It also evaluates your F# code and produce tooltips.
-
-***
-
-### Syntax Highlighting
-
-#### F# (with tooltips)
-
-    let a = 5
-    let factorial x = [1..x] |> List.reduce (*)
-    let c = factorial a
-
----
-
-#### C#
-
-    [lang=cs]
-    using System;
-
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello, world!");
-        }
-    }
-
----
-
-#### JavaScript
-
-    [lang=js]
-    function copyWithEvaluation(iElem, elem) {
-        return function (obj) {
-            var newObj = {};
-            for (var p in obj) {
-                var v = obj[p];
-                if (typeof v === "function") {
-                    v = v(iElem, elem);
-                }
-                newObj[p] = v;
-            }
-            if (!newObj.exactTiming) {
-                newObj.delay += exports._libraryDelay;
-            }
-            return newObj;
-        };
-    }
-
-
----
-
-#### Haskell
- 
-    [lang=haskell]
-    recur_count k = 1 : 1 : 
-        zipWith recurAdd (recur_count k) (tail (recur_count k))
-            where recurAdd x y = k * x + y
-
-    main = do
-      argv <- getArgs
-      inputFile <- openFile (head argv) ReadMode
-      line <- hGetLine inputFile
-      let [n,k] = map read (words line)
-      printf "%d\n" ((recur_count k) !! (n-1))
-
-*code from [NashFP/rosalind](https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs)*
-
----
-
-### SQL
-
-    [lang=sql]
-    select *
-    from
-    (select 1 as Id union all select 2 union all select 3) as X
-    where Id in (@Ids1, @Ids2, @Ids3)
-
-*sql from [Dapper](https://code.google.com/p/dapper-dot-net/)*
-
----
-
-### Paket
-
-    [lang=paket]
-    source https://nuget.org/api/v2
-
-    nuget Castle.Windsor-log4net >= 3.2
-    nuget NUnit
-    
-    github forki/FsUnit FsUnit.fs
-      
----
-
-### C/AL
-
-    [lang=cal]
-    PROCEDURE FizzBuzz(n : Integer) r_Text : Text[1024];
-    VAR
-      l_Text : Text[1024];
-    BEGIN
-      r_Text := '';
-      l_Text := FORMAT(n);
-
-      IF (n MOD 3 = 0) OR (STRPOS(l_Text,'3') > 0) THEN
-        r_Text := 'Fizz';
-      IF (n MOD 5 = 0) OR (STRPOS(l_Text,'5') > 0) THEN
-        r_Text := r_Text + 'Buzz';
-      IF r_Text = '' THEN
-        r_Text := l_Text;
-    END;
+- Brief intro
+- How we got here
+- Review current state
+- Towards version 1.0
+- What's next
 
 ***
 
-**Bayes' Rule in LaTeX**
+# Brief intro
 
-$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
+- What is SAFE?
+- Quick Demo
+
+---
+
+<img src="images/safe_top.png" style="background: transparent; border: none; box-shadow: none"  />
+
+# ???
+
+---
+
+![Mean](images/mean.png)
+
+<small>https://www.troofal.com/services/mean-stack</small>
+
+---
+
+![LAMP](images/lamp.jpg)
+
+<small>https://www.programmableweb.com/news/what-mean-stack-and-why-it-better-lamp/analysis/2015/12/22</small>
+
+---
+
+- data-background : images/4CATS.jpg
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h2 style="color:white">CATS</h1>
+<h3 style="color:white">(Typical MS Stack)</h1>
+
+<img src="images/CSHARP.jpeg" style="width: 200px; background: transparent; border: none; box-shadow: none"  />
+<img src="images/ASPNET.gif" style="width: 200px; background: white; border: none; box-shadow: none"  />
+<img src="images/TYPESCRIPT.svg" style="width: 200px; background: none; border: none; box-shadow: none"  />
+<img src="images/SQLSERVER.png" style="width: 200px; background: white; border: none; box-shadow: none"  />
+
+
+
+---
+
+<img src="images/safe_top.png" style="background: transparent; border: none; box-shadow: none"  />
+
+## big picture
+
+</br> 
+
+* Web stack
+* Combines several OSS projects
+* F# end-to-end
+* Type-SAFE
+* Cloud-ready
+* Flexible
+
+https://safe-stack.github.io
+
+---
+
+<img src="images/safe_s.png" style="background: transparent; border: none; box-shadow: none"  />
+
+## <span style="color: #e7ad52;">S</span> for <span style="color: #e7ad52;">S</span>aturn<span>
+
+<img src="images/saturn.png" style="background: transparent; border: none; box-shadow: none" width="100" />
+
+https://saturnframework.org/
+
+* **Web server**
+* ASP.NET Core, Kestrel
+* MVC pattern
+
+---
+
+<img src="images/safe_a.png" style="background: transparent; border: none; box-shadow: none"  />
+
+## <span style="color: #e7ad52;">A</span> for <span style="color: #e7ad52;">A</span>zure <span>
+
+<img src="images/azure.png" style="background: transparent; border: none; box-shadow: none" width="180" />
+
+https://azure.microsoft.com
+
+* **Cloud** provider
+
+---
+
+<img src="images/safe_f.png" style="background: transparent; border: none; box-shadow: none"  />
+
+## <span style="color: #e7ad52;">F</span> for <span style="color: #e7ad52;">F</span>able <span>
+
+<img src="images/fable_only_letter.png" style="background: transparent; border: none; box-shadow: none" width="100" />
+
+http://fable.io
+
+* F# to **JavaScript compiler**
+* Babel JS
+
+---
+
+<img src="images/safe_e.png" style="background: transparent; border: none; box-shadow: none"  />
+
+## <span style="color: #e7ad52;">E</span> for <span style="color: #e7ad52;">E</span>lmish <span>
+
+<img src="images/elmish.png" style="background: transparent; border: none; box-shadow: none" width="140" />
+
+https://elmish.github.io
+
+* **UI library**
+* inspired by Elm
+
+---
+
+<img src="images/safe_stack.png" style="background: transparent; border: none; box-shadow: none" />
+
+
+---
+
+## Quick Demo
+
+- Creating from scratch
+- Watch mode
+
+---
+
+## Watch full demo
+
+
+![full demo](images/full_demo.png)
+
+[F# eXchange '18 Video](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack)
 
 ***
 
-### The Reality of a Developer's Life 
+# How we got here
 
-**When I show my boss that I've fixed a bug:**
-  
-![When I show my boss that I've fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)
-  
-**When your regular expression returns what you expect:**
-  
-![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)
-  
-*from [The Reality of a Developer's Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*
+- Fable
+- Announcing SAFE @ FableConf '17
+- Sample projects
+- SAFE template
 
+***
+
+# Review current state
+
+---
+
+## Documentation
+
+![docs](images/docs.png)
+
+https://safe-stack.github.io/docs/
+
+---
+
+## Template options
+
+* Server
+* Deploy
+* Layout
+* JS Deps
+* Communication
+* Pattern
+
+---
+
+## NuGet downloads
+
+![nuget_downloads.png](images/nuget_downloads.png)
+
+---
+
+## Microsoft involvement
+
+![ms.png](images/ms.png)
+
+[Phillip Carter @ F# eXchange '18](https://skillsmatter.com/skillscasts/10138-keynote-thrilled-to-have-phillip-carter-hosting-a-keynote-at-fsharpx-2018)
+
+---
+
+## Technology Radar
+
+![tech_radar.png](images/tech_radar.png)
+
+[Radar - languages and frameworks](https://www.thoughtworks.com/radar/languages-and-frameworks)
+
+---
+
+## Commercial support
+
+![support.png](images/support.png)
+
+
+---
+
+## Events
+
+* Conferences
+* Meetups
+* Workshops
+* Podcasts
+  * [Hanselminutes - SAFE Stack with Krzysztof Cieślak](https://hanselminutes.com/624/f-and-the-functional-safe-stack-with-krzysztof-cielak)
+  * [.NET Rocks - SAFE Stack with Anthony Brown](https://dotnetrocks.com/?show=1626)
+  * [WTF# is the SAFE Stack with Isaac Abraham](https://player.fm/series/wtf-1926954/wtf-is-the-safe-stack)
+
+--> https://safe-stack.github.io/docs/events/
+
+***
+
+# Towards version 1.0
+
+- Objectives for version 1.0
+- Release 1.0 live on stage
+- Celebrate?
+
+***
+
+# What's next
+
+- To be discussed with Isaac, Chris, Anthony, Steffen
+- Support & fixing issues
+- Extending template:
+  - other platforms (mobile, desktop, iot)
+  - tests
+  - more deployment options
+
+***
+
+# Q&A
