@@ -26,8 +26,9 @@ https://theimowski.com
 # Plan
 
 - Brief intro
+- Where are we today
 - How we got here
-- Review current state
+- Template deep dive
 - Towards version 1.0
 - What's next
 
@@ -166,18 +167,10 @@ https://elmish.github.io
 
 [F# eXchange '18 Video](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack)
 
-***
-
-# How we got here
-
-- Fable
-- Announcing SAFE @ FableConf '17
-- Sample projects
-- SAFE template
 
 ***
 
-# Review current state
+# Where are we today
 
 ---
 
@@ -189,14 +182,15 @@ https://safe-stack.github.io/docs/
 
 ---
 
-## Template options
+## Companies ?
 
-* Server
-* Deploy
-* Layout
-* JS Deps
-* Communication
-* Pattern
+1. Datto
+1. Compositional IT
+1. Lambda Factory
+1. Lufthansa
+1. msu-solutions.de 
+1. Danpower ?
+1. Goswin Rothenthal
 
 ---
 
@@ -229,31 +223,200 @@ https://safe-stack.github.io/docs/
 
 ---
 
-## Events
+## Podcasts
 
-* Conferences
-* Meetups
-* Workshops
-* Podcasts
-  * [Hanselminutes - SAFE Stack with Krzysztof Cieślak](https://hanselminutes.com/624/f-and-the-functional-safe-stack-with-krzysztof-cielak)
-  * [.NET Rocks - SAFE Stack with Anthony Brown](https://dotnetrocks.com/?show=1626)
-  * [WTF# is the SAFE Stack with Isaac Abraham](https://player.fm/series/wtf-1926954/wtf-is-the-safe-stack)
+* [Hanselminutes - SAFE Stack with Krzysztof Cieślak](https://hanselminutes.com/624/f-and-the-functional-safe-stack-with-krzysztof-cielak)
+* [.NET Rocks - SAFE Stack with Anthony Brown](https://dotnetrocks.com/?show=1626)
+* [WTF# is the SAFE Stack with Isaac Abraham](https://player.fm/series/wtf-1926954/wtf-is-the-safe-stack)
+
+
+---
+
+## Events
+### Conference talks
+
+* Lambda Days 2018, Kraków, Poland
+* FableConf 2018, Berlin, Germany
+* F(by) 2019, Minsk, Belarus
+* ...
 
 --> https://safe-stack.github.io/docs/events/
+
+--- 
+
+## Events
+### Workshops
+
+* Open F# 2018, San Francisco, USA
+* SAFE Hackday 2018, Birmingham, UK
+* DevDays 2019, Vilnius, Lithuania
+* ...
+
+--> https://safe-stack.github.io/docs/events/
+
+---
+
+## Events
+### Local Meetups
+
+* Bristol, UK
+* Vienna, Austria
+* Prague, Czech Republic
+* ...
+
+--> https://safe-stack.github.io/docs/events/
+
+
+***
+
+# How we got here
+
+---
+
+## Fable
+
+* Stable F# to JS compilation
+* Reusing F# sources between front and back end
+
+---
+
+## Announcing SAFE
+
+* FableConf '17
+* [Compositional IT Blog entry](https://compositional-it.com/blog/2017/09-22-safe-release/index.html)
+
+---
+
+## SAFE projects on GitHub
+
+* [SAFE-BookStore](https://github.com/SAFE-Stack/SAFE-BookStore)
+* [SAFE-Nightwatch](https://github.com/SAFE-Stack/SAFE-Nightwatch)
+* [SAFE-ConfPlanner](https://github.com/SAFE-Stack/SAFE-ConfPlanner)
+* [SAFE-Chat](https://github.com/SAFE-Stack/SAFE-Chat)
+* [SAFE-Search](https://github.com/SAFE-Stack/SAFE-Search)
+
+---
+
+## SAFE template
+
+* `dotnet new -i SAFE.Template`
+* `dotnet new SAFE`
+* `fake build --target run`
+
+---
+
+## Promotion
+
+* https://twitter.com/safe_stack
+* All the events
+* Companies & community
+
+***
+
+# Template Deep dive
+
+---
+
+## Template options
+
+* Server
+* Deploy
+* Layout
+* JS Deps
+* Communication
+* Pattern
+
+---
+
+## Template options
+### Server
+
+<img src="images/saturn.png" style="width: 200px; background: white"  />
+<img src="images/giraffe.png" style="width: 200px; background: white"  />
+<img src="images/suave.png" style="width: 200px; background: white"  />
+
+<br/>
+
+1. Saturn
+1. Giraffe
+1. Suave
+
+---
+
+## Template options
+### Deploy
+
+
+<img src="images/azure_square.png" style="width: 200px; background: white"  />
+<img src="images/docker.png" style="width: 210px; background: white"  />
+<img src="images/google_cloud.png" style="width: 200px; background: white"  />
+<img src="images/k8s.png" style="width: 205px; background: white"  />
+
+<br/>
+
+1. Azure AppService
+1. Docker
+1. Google Cloud AppEngine
+1. Google Cloud Kubernetes Engine
+
+---
+
+## Template options: layout
+
+<img src="images/fulma-basic.png" style="width: 250px; background: white"  />
+<img src="images/fulma-admin.png" style="width: 250px; background: white"  />
+<img src="images/fulma-cover.png" style="width: 250px; background: white"  />
+<br/>
+<img src="images/fulma-hero.png" style="width: 250px; background: white"  />
+<img src="images/fulma-landing.png" style="width: 250px; background: white"  />
+<img src="images/fulma-login.png" style="width: 250px; background: white"  />
+
+---
+
+## Template options
+### JS Deps
+
+---
+
+## Template options
+### Communication
+
+---
+
+## Template options
+### Pattern
+
+---
+
+
+## Template development
+
+* Integration tests
+    * Property-based for all options
+    * Building new template
+    * Checking HTTP response
+* Pinning dependencies
+* Misc
 
 ***
 
 # Towards version 1.0
 
-- Objectives for version 1.0
-- Release 1.0 live on stage
-- Celebrate?
+---
+
+## 1.0 objectives
+
+---
+
+## 1.0 release
+
 
 ***
 
 # What's next
 
-- To be discussed with Isaac, Chris, Anthony, Steffen
+(To be discussed with Isaac, Chris, Anthony, Steffen)
+
 - Support & fixing issues
 - Extending template:
   - other platforms (mobile, desktop, iot)
