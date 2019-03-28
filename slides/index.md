@@ -85,7 +85,6 @@ https://theimowski.com
 
 </br> 
 
-* Web stack
 * Combines several OSS projects
 * F# end-to-end
 * Type-SAFE
@@ -156,16 +155,14 @@ https://elmish.github.io
 ## Quick Demo
 
 - Creating from scratch
-- Watch mode
+- Debugging both Client & Server
 
 ---
-
-## Watch full demo
 
 
 ![full demo](images/full_demo.png)
 
-[F# eXchange '18 Video](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack)
+Watch full demo from [F# eXchange '18 Video](https://skillsmatter.com/skillscasts/11308-safe-apps-with-f-web-stack)
 
 
 ***
@@ -216,7 +213,7 @@ https://safe-stack.github.io/docs/
 
 ---
 
-## Commercial support
+### Commercial support
 
 ![support.png](images/support.png)
 
@@ -361,7 +358,7 @@ https://safe-stack.github.io/docs/
 
 ---
 
-## Template options: layout
+## Template options: layout (Fulma)
 
 <img src="images/fulma-basic.png" style="width: 250px; background: white"  />
 <img src="images/fulma-admin.png" style="width: 250px; background: white"  />
@@ -376,15 +373,27 @@ https://safe-stack.github.io/docs/
 ## Template options
 ### JS Deps
 
+<img src="images/yarn.jpg" style="width: 250px; background: white"  />
+<img src="images/npm.png" style="width: 250px; background: white"  />
+
+<br/>
+
+1. Yarn
+1. NPM
+
 ---
 
 ## Template options
 ### Communication
 
+* [Fable.Remoting](https://github.com/Zaid-Ajaj/Fable.Remoting)
+
 ---
 
 ## Template options
 ### Pattern
+
+* [Fable.Reaction](https://github.com/dbrattli/Reaction)
 
 ---
 
@@ -396,7 +405,8 @@ https://safe-stack.github.io/docs/
     * Building new template
     * Checking HTTP response
 * Pinning dependencies
-* Misc
+    * Variance in paket.dependencies
+    * Automated update
 
 ***
 
