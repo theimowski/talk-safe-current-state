@@ -12,12 +12,10 @@
 
 <img src="images/safe.png" style="width:256px; background: transparent; border:none; box-shadow: none"  />
 
-Tomasz Heimowski 
+Tomasz Heimowski *@theimowski*
 
 <img src="images/twitter.png" style="width:48px; background: transparent; border:none; box-shadow: none"  />
 <img src="images/github.png" style="width:48px; background: transparent; border: none; box-shadow: none"  />
-
-*@theimowski*
 
 https://theimowski.com
 
@@ -176,18 +174,6 @@ Watch full demo from [F# eXchange '18 Video](https://skillsmatter.com/skillscast
 ![docs](images/docs.png)
 
 https://safe-stack.github.io/docs/
-
----
-
-## Companies ?
-
-1. Datto
-1. Compositional IT
-1. Lambda Factory
-1. Lufthansa
-1. msu-solutions.de 
-1. Danpower ?
-1. Goswin Rothenthal
 
 ---
 
@@ -416,6 +402,11 @@ https://safe-stack.github.io/docs/
 
 ## 1.0 objectives
 
+* stable dependencies
+* stable CLI interface
+* stable WebPack configuration
+* better adoption
+
 ---
 
 ## 1.0 release
@@ -425,14 +416,17 @@ https://safe-stack.github.io/docs/
 
 # What's next
 
-(To be discussed with Isaac, Chris, Anthony, Steffen)
-
 - Support & fixing issues
 - Extending template:
-  - other platforms (mobile, desktop, iot)
+  - other platforms (mobile, desktop, iot?)
   - tests
   - more deployment options
+- Keeping SAFE project "up to date"
 
 ***
 
-# Q&A
+# Thank you!
+
+Slides available at
+
+https://theimowski.com/talk-safe-current-state/index.html
