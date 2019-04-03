@@ -201,8 +201,7 @@ https://safe-stack.github.io/docs/
 
 ### Commercial support
 
-![support.png](images/support.png)
-
+<img src="images/support.png" style="background: transparent; border: none; box-shadow: none" width="750" />
 
 ---
 
@@ -260,6 +259,13 @@ https://safe-stack.github.io/docs/
 
 * Stable F# to JS compilation
 * Reusing F# sources between front and back end
+
+---
+
+## Elmish
+
+* Straight-forward & popular programming model
+* Became de-facto a standard for Fable Web-based apps
 
 ---
 
